@@ -27,8 +27,8 @@ public class UsuarioService {
 
   @Transactional
   public Usuario guardar(Usuario usuario){
-    if(usuario.getPassword() != null){
-      usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
+    if(usuario.getEmail() != null){
+      usuario.setEmail(usuario.getEmail().toLowerCase());
     }
     return usuarioRepository.save(usuario);
   }
